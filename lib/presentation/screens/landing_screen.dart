@@ -1,16 +1,36 @@
 import 'package:flutter/material.dart';
 
 class LandingScreen extends StatelessWidget {
-  const LandingScreen({Key? key}) : super(key: key);
+  const LandingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Landing Screen'),
+        title: const Text('Alfred'),
       ),
-      body: const Center(
-        child: Text('Welcome to the Landing Screen!'),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Alfred',
+              style: theme.textTheme.bodyLarge!.copyWith(
+                fontSize: 32,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              'Your personal AI assistant',
+              style: theme.textTheme.bodyMedium!.copyWith(
+                fontSize: 16,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
